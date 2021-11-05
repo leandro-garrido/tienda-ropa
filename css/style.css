@@ -12,13 +12,13 @@
     color: white !important;
 }
 
-.social, a{
+.social, p a{
     color: chocolate;
     text-decoration: none;
     
 }
 
-.social:hover, a:hover{
+.social:hover, p a:hover{
     color: rgba(210, 105, 30, 0.692);
     text-decoration: none;
 }
@@ -27,8 +27,16 @@ a .img-fluid:hover{
     border: chocolate solid 2px;
 }
 
-
-
 .nav-link:hover, .navbar-brand:hover{
     color: chocolate !important;
 }
+
+.list-group-item a{
+    color: black !important;
+    text-decoration: none;
+}
+
+.list-group-item a:hover{
+    color: chocolate !important;
+}
+

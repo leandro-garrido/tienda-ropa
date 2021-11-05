@@ -99,7 +99,7 @@
         <div class="sec3">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="p-0 col-12 mt-5 d-flex justify-content-center">
+                    <div class="px-0 col-12 mt-5 d-flex justify-content-center">
                         <a href="outfits.php" class=""><img src="./img/sec3-1.png" alt="" class="img-fluid"></a>
                     </div>
                 </div>
