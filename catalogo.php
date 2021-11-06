@@ -90,11 +90,11 @@ $datos = mysqli_query($conexion, $consulta);
                             <hr>
                             <div class="row">
                                 <?php
-                                    // 4) Mostrar los datos del registro
-                                    while ($reg = mysqli_fetch_array($datos)) { ?>
+                                // 4) Mostrar los datos del registro
+                                while ($reg = mysqli_fetch_array($datos)) { ?>
                                 <div class="col-4 mt-4">
                                     <div class="card">
-                                        <a href="#" class="card-body text-center">
+                                        <a href="detalles.php?id=<?php echo $reg['id']; ?>" class="card-body text-center">
                                             <img class="card-img-top" src="./img/remera1.jpg" alt="img">
                                             <h3 class="card-title">remera re loca</h3>
                                             <p class="card-text">$10</p>
