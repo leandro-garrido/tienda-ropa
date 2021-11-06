@@ -61,11 +61,11 @@ $datos = mysqli_query($conexion, $consulta);
 
     <section>
         <div class="catalogo">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div class="filtros mt-5 col-lg-3 col-xl-3 d-none d-lg-block d-xl-block">
-                        <h3 class="h3">Filtrar</h3>
                         <ul class="list-group list-group-flush">
+                            <h2 class="h2 list-group-item">Filtrar</h2>
                             <li class="list-group-item"><a href="">Camisas (111)</a></li>
                             <li class="list-group-item"><a href="">Chombas (55)</a></li>
                             <li class="list-group-item"><a href="">Pantalones (87)</a></li>
@@ -85,26 +85,45 @@ $datos = mysqli_query($conexion, $consulta);
                     </div>
 
                     <div class="ropa mt-5 col-lg-9 col-xl-9 col-12">
-                        <div class="row">
+                        <div class="container-fluid">
                             <h2 class="h2">Catalogo</h2>
-                            <?php
-                        // 4) Mostrar los datos del registro
-                        while ($reg = mysqli_fetch_array($datos)) { ?>
-                            <div class="card col-4">
-                                <img class="card-img-top"
-                                    src="data:image/png;base64, <?php echo base64_encode($reg['imagen']) ?>" alt="img"
-                                    style="width: 100%; height: 50x;">
-                                <a href="ver.php?id=<?php echo $reg['id']; ?>" class="card-body"
-                                    style="text-decoration: none;">
-                                    <h3 class="card-title" style="width: 100%; font-size:25px;">
-                                        <?php echo ucwords($reg['tipo_prenda'] . " " . $reg['marca'] . " ") . strtoupper($reg['talle']); ?>
-                                    </h3>
-                                    <span>$<?php echo $reg['precio']; ?></span>
-                                </a>
+                            <hr>
+                            <div class="row">
+                                <?php
+                                    // 4) Mostrar los datos del registro
+                                    while ($reg = mysqli_fetch_array($datos)) { ?>
+                                <div class="col-4 mt-4">
+                                    <div class="card">
+                                        <a href="#" class="card-body text-center">
+                                            <img class="card-img-top" src="./img/remera1.jpg" alt="img">
+                                            <h3 class="card-title">remera re loca</h3>
+                                            <p class="card-text">$10</p>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!--
+                                <div class="col-4 mt-4">
+                                    <div class="card">
+                                        <img class="card-img-top"
+                                            src="data:image/png;base64, <?php echo base64_encode($reg['imagen']) ?>"
+                                            alt="img" style="width: 100%; height: 50x;">
+                                        <a href="ver.php?id=<?php echo $reg['id']; ?>" class="card-body"
+                                            style="text-decoration: none;">
+                                            <h3 class="card-title" style="width: 100%; font-size:25px;">
+                                                <?php echo ucwords($reg['tipo_prenda'] . " " . $reg['marca'] . " ") . strtoupper($reg['talle']); ?>
+                                            </h3>
+                                            <span>$<?php echo $reg['precio']; ?></span>
+                                        </a>
+                                    </div>
+                                </div>
+                                -->
+                                <?php } ?>
                             </div>
-                            <?php } ?>
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </div>

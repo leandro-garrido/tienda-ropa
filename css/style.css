@@ -40,3 +40,41 @@ a .img-fluid:hover{
     color: chocolate !important;
 }
 
+.card{
+    border: none !important;
+}
+
+.card:hover{
+    border: 1px solid chocolate !important;
+}
+
+/* 
+
+colocar zoom a imagen
+
+.card-img-top{
+    transition: transform .2s;
+}
+
+.card-img-top:hover{
+    transform: scale(1.5);
+}
+*/
+
+.card-body{
+    margin: 0;
+    padding: 0;
+    color: black !important;
+    text-decoration: none !important;
+}
+
+.card-text{
+    padding-top: 0.3rem;
+    padding-bottom: 00.3rem;
+    font-size: 1.5rem;
+}
+
+.card:hover .card-text{
+    background-color: chocolate;
+    
+}
