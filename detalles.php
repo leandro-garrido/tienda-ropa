@@ -1,7 +1,6 @@
 <?php
 // 1) Conexion
-$conexion = mysqli_connect("localhost", "id17011505_root", "jdq1o7Nma3R~zTr=");
-mysqli_select_db($conexion, "id17011505_tienda_ropa");
+include_once "config.php";
 
 // 2) Almacenamos los datos del envío POST
 $id = $_GET['id'];
@@ -24,97 +23,166 @@ $datos = mysqli_fetch_array($repuesta);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <title>Tienda de Ropa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <div class="container-img d-flex justify-content-center p-3">
-                <h1>Tienda de ropa</h1>
-            </div>
-            <nav class="navbar navbar-light navbar-expand-sm bg-dark navbar-dark navbar-light justify-content-between">
-                <ul class="navbar-nav">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.php">Tienda Ropa</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Inicio</a>
+                        <a class="nav-link" href="index.php">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="listar.php">Listar</a>
+                        <a class="nav-link" href="catalogo.php">Catalogo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="agregar.html">Agregar</a>
+                        <a class="nav-link" href="outfits.php">Outfits</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ayuda.php">Ayuda</a>
                     </li>
                 </ul>
-            </nav>
-        </header>
+            </div>
+        </div>
+    </nav>
 
-        <!-- producto -->
-        <section>
-            <div class="container my-3">
-                <div class="row">
-                    <div class="text-center">
-                        <h1><?php echo ucwords($datos['tipo_prenda'] . " " . $datos['marca'] . " ") . strtoupper($datos['talle']); ?></h1>
-                    </div>
+    <!-- producto -->
+    <section>
+        <div class="container my-3">
+            <div class="row">
+                <div class="card col-12 col-md-4 col-lg-6">
+                    <img class="card-img-top" src="./img/remera1.jpg"
+                        alt="img">
                 </div>
-                <div class="row">
-                    <div class="card col-6 col-lg-3">
-                        <img class="card-img-top" src="data:image/png;base64, <?php echo base64_encode($datos['imagen']) ?>" alt="img" style="width: 100%; height: 400px;">
-                    </div>
-                    <div class="card col-6 col-lg-9">
-                        <div class="card-body">
-                            <h2 class="card-title">Información</h2>
-                            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate quaerat consectetur similique porro, dolore, impedit quae tenetur eveniet animi quibusdam rerum quos consequatur eos delectus, at illum adipisci eius velit?</p>
-                            <p class="card-text">Tipo de prenda: <?php echo ucwords($datos['tipo_prenda']); ?></p>
-                            <p class="card-text">Marca: <?php echo ucwords($datos['marca']); ?></p>
-                            <p class="card-text">Talle: <?php echo strtoupper($datos['talle']); ?></p>
-                            <p class="card-text">Precio: $<?php echo $datos['precio']; ?></p>
-                        </div>
+                <div class="card col-12 col-md-8 col-lg-6">
+                    <div class="card-body">
+                        <h2 class="card-title">Remera re loca</h2>
+                        <p class="card-text">Color:</p>
+                        <p class="card-text">Talle:
+                            
+                            <input type="radio" class="btn-check" name="options" id="talle_s" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="talle_s">S</label>
+                            
+                            <input type="radio" class="btn-check" name="options" id="talle_m" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="talle_m">M</label>
+                            
+                            <input type="radio" class="btn-check" name="options" id="talle_l" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="talle_l">L</label>
+                            
+                            <input type="radio" class="btn-check" name="options" id="talle_xl" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="talle_xl">XL</label>
+                            
+                            <input type="radio" class="btn-check" name="options" id="talle_xxl" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="talle_xxl">XXL</label>
+                            
+                            <input type="radio" class="btn-check" name="options" id="talle_xxxl" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="talle_xxxl">XXXL</label>
+                            
+                        </p>
+                        <h2 class="card-text">$500</h2>
+                        <button type="submit">Agregar al carrito</button>
+                        <h4 class="card-title">Descripción</h4>
+                        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate
+                            quaerat consectetur similique porro, dolore, impedit quae tenetur eveniet animi
+                            quibusdam rerum quos consequatur eos delectus, at illum adipisci eius velit?</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
         <!-- otros productos -->
-        <section>
-            <div class="container my-3">
-                <div class="row">
-                    <div class="text-center my-3">
-                        <h2>Productos relacionados</h2>
-                    </div>
+        <div class="container my-3">
+            <div class="row">
+                <div class="text-center my-3">
+                    <h2>Productos relacionados</h2>
                 </div>
+            </div>
+            <div class="row">
+                <?php
+                $q = mysqli_query($conexion, 'SELECT * FROM ropa ORDER BY RAND() LIMIT 4');
+                while ($reg = mysqli_fetch_array($q)) { ?>
+                <div class="card mb-1 col-12 col-md-6 col-lg-3">
+                    <img class="card-img-top" src="./img/remera1.jpg"
+                        alt="img">
+                    <a href="ver.php?id=<?php echo $reg['id']; ?>" class="card-body" style="text-decoration: none;">
+                        <h3 class="card-title" style="width: 100%; font-size:25px;">
+                            <?php echo ucwords($reg['tipo_prenda'] . " " . $reg['marca'] . " ") . strtoupper($reg['talle']); ?>
+                        </h3>
+                        <span>$<?php echo $reg['precio']; ?></span>
+                    </a>
+                </div>
+                <?php } ?>
+            </div>
+        </div>
+
+        <div class="sec5 mt-5">
+            <div class="container-fluid bg-dark">
                 <div class="row">
-                    <?php
-                    $q = mysqli_query($conexion, 'SELECT * FROM ropa ORDER BY RAND() LIMIT 4');
-                    while ($reg = mysqli_fetch_array($q)) { ?>
-                        <div class="card mb-1 col-3 col-lg-3">
-                            <img class="card-img-top" src="data:image/png;base64, <?php echo base64_encode($reg['imagen']) ?>" alt="img" style="width: 100%; height: 400px;">
-                            <a href="ver.php?id=<?php echo $reg['id']; ?>" class="card-body" style="text-decoration: none;">
-                                <h3 class="card-title" style="width: 100%; font-size:25px;"><?php echo ucwords($reg['tipo_prenda'] . " " . $reg['marca'] . " ") . strtoupper($reg['talle']); ?></h3>
-                                <span>$<?php echo $reg['precio']; ?></span>
-                            </a>
+                    <div class="my-5 text-center text-light">
+                        <h2>¡ENTERATE DE TODO!</h2>
+                        <p>Suscribite a nuestro newsletter y recibí ofertas exclusivas</p>
+                        <form>
+                            <div class="d-flex justify-content-center">
+                                <input type="email" class="form-control w-50 rounded-pill mx-3" id="exampleInputEmail1"
+                                    placeholder="Ingresá tu email">
+                                <button type="submit" class="btn boton btn-primary px-5 rounded-pill">Enviar</button>
+                            </div>
+                        </form>
+                        <div class="mt-3">
+                            <h5>Seguinos en nuestras redes</h5>
+                            <button type="button" class="btn">
+                                <a class="social" href="https://www.facebook.com/" target="_blank"><i
+                                        class="bi bi-facebook"></i></a>
+                            </button>
+                            <button type="button" class="btn">
+                                <a class="social" href="https://www.instagram.com/" target="_blank"><i
+                                        class="bi bi-instagram"></i></a>
+                            </button>
+                            <button type="button" class="btn">
+                                <a class="social" href="https://twitter.com/" target="_blank"><i
+                                        class="bi bi-twitter"></i></a>
+                            </button>
                         </div>
-                    <?php } ?>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="navbar bg-dark navbar-dark">
-                        <p class="text-white justify-content-center p-3">Tienda de ropa, ejemplo realizado para el curso de Backend en Potrero Digital.</p>
                     </div>
                 </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </section>
 
+    <footer class="mt-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2>Vestirse nunca fue tan facil.</h2>
+                </div>
+                <hr class="mt-5">
+                <div class="col-12 col-lg-6 col-xl-6">
+                    <p class="text-muted">Diseñado por <a href="https://www.linkedin.com/in/leandro-garrido/"
+                            target="_blank">Leandro Garrido</a>. Todos los derechos reservados</p>
+                </div>
+                <div class="col-12 col-lg-6 col-xl-6 text-end">
+                    <p class="text-muted">Utilizado con fines educativos para <a href="https://www.potrerodigital.org/"
+                            target="_blank">Potrero Digital</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
