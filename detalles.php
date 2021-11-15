@@ -103,27 +103,28 @@ $datos = mysqli_fetch_array($repuesta);
         </div>
 
         <!-- otros productos -->
-        <div class="container my-3">
-            <div class="row">
-                <div class="text-center my-3">
-                    <h2>Productos relacionados</h2>
+        <div class="productos">
+            <div class="container my-3">
+                <div class="row">
+                    <div class="text-center my-3">
+                        <h2>Productos relacionados</h2>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <?php
-                $q = mysqli_query($conexion, 'SELECT * FROM ropa ORDER BY RAND() LIMIT 4');
-                while ($reg = mysqli_fetch_array($q)) { ?>
-                <div class="card mb-1 col-12 col-md-6 col-lg-3">
-                    <img class="card-img-top" src="./img/remera1.jpg"
-                        alt="img">
-                    <a href="ver.php?id=<?php echo $reg['id']; ?>" class="card-body" style="text-decoration: none;">
-                        <h3 class="card-title" style="width: 100%; font-size:25px;">
-                            <?php echo ucwords($reg['tipo_prenda'] . " " . $reg['marca'] . " ") . strtoupper($reg['talle']); ?>
-                        </h3>
-                        <span>$<?php echo $reg['precio']; ?></span>
-                    </a>
+                <div class="row">
+                    <?php
+                    $q = mysqli_query($conexion, 'SELECT * FROM ropa ORDER BY RAND() LIMIT 4');
+                    while ($reg = mysqli_fetch_array($q)) { ?>
+                    <div class="col-6 col-lg-3 mt-4">
+                        <div class="card">
+                            <a href="ver.php?id=<?php echo $reg['id']; ?>" class="card-body text-center">
+                                <img class="card-img-top" src="./img/remera1.jpg" alt="img">
+                                <h3 class="card-title">remera re loca</h3>
+                                <p class="card-text">$10</p>
+                            </a>
+                        </div>
+                    </div>
+                    <?php } ?>
                 </div>
-                <?php } ?>
             </div>
         </div>
 

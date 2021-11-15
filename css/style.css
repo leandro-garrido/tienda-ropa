@@ -36,15 +36,15 @@ a .img-fluid:hover{
     text-decoration: none;
 }
 
-.list-group-item a:hover{
-    color: chocolate !important;
+li.list-group-item:hover{
+    background-color: chocolate !important;
 }
 
 .card{
     border: none !important;
 }
 
-.card:hover{
+.productos .card:hover{
     border: 1px solid chocolate !important;
 }
 
@@ -74,7 +74,7 @@ colocar zoom a imagen
     font-size: 1.5rem;
 }
 
-.card:hover .card-text{
+.productos .card:hover .card-text{
     background-color: chocolate;
     
 }

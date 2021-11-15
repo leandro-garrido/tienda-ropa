@@ -66,7 +66,7 @@ $datos = mysqli_query($conexion, $consulta);
                     <div class="filtros mt-5 col-lg-3 col-xl-3 d-none d-lg-block d-xl-block">
                         <ul class="list-group list-group-flush">
                             <h2 class="h2 list-group-item">Filtrar</h2>
-                            <li class="list-group-item"><a href="">Camisas (111)</a></li>
+                            <li class="list-group-item"><a href="">Camisas (1101)</a></li>
                             <li class="list-group-item"><a href="">Chombas (55)</a></li>
                             <li class="list-group-item"><a href="">Pantalones (87)</a></li>
                             <li class="list-group-item"><a href="">Remeras (77)</a></li>
@@ -84,7 +84,8 @@ $datos = mysqli_query($conexion, $consulta);
                         </ul>
                     </div>
 
-                    <div class="ropa mt-5 col-lg-9 col-xl-9 col-12">
+
+                    <div class="productos mt-5 col-lg-9 col-xl-9 col-12">
                         <div class="container-fluid">
                             <h2 class="h2">Catalogo</h2>
                             <hr>
@@ -94,7 +95,8 @@ $datos = mysqli_query($conexion, $consulta);
                                 while ($reg = mysqli_fetch_array($datos)) { ?>
                                 <div class="col-4 mt-4">
                                     <div class="card">
-                                        <a href="detalles.php?id=<?php echo $reg['id']; ?>" class="card-body text-center">
+                                        <a href="detalles.php?id=<?php echo $reg['id']; ?>"
+                                            class="card-body text-center">
                                             <img class="card-img-top" src="./img/remera1.jpg" alt="img">
                                             <h3 class="card-title">remera re loca</h3>
                                             <p class="card-text">$10</p>
