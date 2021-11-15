@@ -60,7 +60,7 @@ $datos = mysqli_fetch_array($repuesta);
 
     <!-- producto -->
     <section>
-        <div class="container my-3">
+        <div class="container my-5">
             <div class="row">
                 <div class="card col-12 col-md-4 col-lg-6">
                     <img class="card-img-top" src="./img/remera1.jpg"
@@ -104,7 +104,7 @@ $datos = mysqli_fetch_array($repuesta);
 
         <!-- otros productos -->
         <div class="productos">
-            <div class="container my-3">
+            <div class="container my-5">
                 <div class="row">
                     <div class="text-center my-3">
                         <h2>Productos relacionados</h2>

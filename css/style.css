@@ -48,6 +48,10 @@ li.list-group-item:hover{
     border: 1px solid chocolate !important;
 }
 
+.btn-outline-primary{
+    color: chocolate !important;
+}
+
 /* 
 
 colocar zoom a imagen
@@ -78,3 +82,4 @@ colocar zoom a imagen
     background-color: chocolate;
     
 }
+
