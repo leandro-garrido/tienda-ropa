@@ -71,24 +71,26 @@ $datos = mysqli_fetch_array($repuesta);
                         <h2 class="card-title">Remera re loca</h2>
                         <p class="card-text">Color:</p>
                         <p class="card-text">Talle:
+                            <div class="">
+                                <input type="radio" class="btn-check" name="talle_s" id="talle_s" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="talle_s">S</label>
+                                
+                                <input type="radio" class="btn-check" name="options" id="talle_m" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="talle_m">M</label>
+                                
+                                <input type="radio" class="btn-check" name="options" id="talle_l" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="talle_l">L</label>
+                                
+                                <input type="radio" class="btn-check" name="options" id="talle_xl" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="talle_xl">XL</label>
+                                
+                                <input type="radio" class="btn-check" name="options" id="talle_xxl" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="talle_xxl">XXL</label>
+                                
+                                <input type="radio" class="btn-check" name="options" id="talle_xxxl" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="talle_xxxl">XXXL</label>
+                            </div>
                             
-                            <input type="radio" class="btn-check" name="options" id="talle_s" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="talle_s">S</label>
-                            
-                            <input type="radio" class="btn-check" name="options" id="talle_m" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="talle_m">M</label>
-                            
-                            <input type="radio" class="btn-check" name="options" id="talle_l" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="talle_l">L</label>
-                            
-                            <input type="radio" class="btn-check" name="options" id="talle_xl" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="talle_xl">XL</label>
-                            
-                            <input type="radio" class="btn-check" name="options" id="talle_xxl" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="talle_xxl">XXL</label>
-                            
-                            <input type="radio" class="btn-check" name="options" id="talle_xxxl" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="talle_xxxl">XXXL</label>
                             
                         </p>
                         <h2 class="card-text">$500</h2>
